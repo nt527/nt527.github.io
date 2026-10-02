@@ -96,6 +96,17 @@
     .btn-line { color: var(--ink); }
     .btn-line:hover { background: var(--ink); color: var(--paper); }
 
+    .hero-grid { display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: center; }
+    .headshot {
+      width: 100%; max-width: 260px; aspect-ratio: 4 / 5; object-fit: cover;
+      border-radius: 12px; border: 1px solid var(--line);
+      box-shadow: 10px 10px 0 var(--highlight);
+    }
+    @media (max-width: 760px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .headshot { max-width: 180px; order: -1; }
+    }
+
     /* Sections */
     section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
     h2 {
@@ -176,7 +187,8 @@
   <main id="top">
     <!-- PERSONAL STATEMENT -->
     <div class="hero">
-      <div class="wrap">
+      <div class="wrap hero-grid">
+        <div>
         <p class="hello">Hi, I'm Nikhil Taneja.</p>
         <h1 class="statement">
           I'm a Finance student at Rutgers University–New Brunswick who turns
@@ -187,6 +199,8 @@
           <a class="btn btn-solid" href="#projects">See my projects</a>
           <a class="btn btn-line" href="mailto:nt527@scarletmail.rutgers.edu">Email me</a>
         </div>
+        </div>
+        <img class="headshot" src="headshot.jpg" alt="Headshot of Nikhil Taneja" width="260" height="325">
       </div>
     </div>
 
